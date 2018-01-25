@@ -3,6 +3,8 @@ package com.example.joseph.myrestuarants;
 import android.os.Build;
 import android.widget.TextView;
 
+import com.example.joseph.myrestuarants.ui.MainActivity;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
