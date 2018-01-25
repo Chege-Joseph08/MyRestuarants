@@ -4,10 +4,11 @@ package com.example.joseph.myrestuarants.models;
  * Created by joseph on 1/23/18.
  */
 
+import org.parceler.Parcel;
 import java.util.ArrayList;
 
 
-
+@Parcel
 public class Restaurant {
     private String mName;
     private String mPhone;
@@ -19,9 +20,14 @@ public class Restaurant {
     private double mLongitude;
     private ArrayList<String> mCategories = new ArrayList<>();
 
+    public Restaurant() {}
+
     public Restaurant(String name, String phone, String website,
                       double rating, String imageUrl, ArrayList<String> address,
                       double latitude, double longitude, ArrayList<String> categories) {
+
+        mImageUrl = getLargeImageUrl(imageUrl);
+
         this.mName = name;
         this.mPhone = phone;
         this.mWebsite = website;
@@ -32,7 +38,10 @@ public class Restaurant {
         this.mLongitude = longitude;
         this.mCategories = categories;
     }
-
+    public String getLargeImageUrl(String imageUrl) {
+        String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 6).concat("o.jpg");
+        return largeImageUrl;
+    }
     public String getName() {
         return mName;
     }
